@@ -84,7 +84,7 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 /* ── Grilles ── */
 .two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,82px);align-items:center}
 @media(max-width:860px){.two{grid-template-columns:1fr}}
-.frame{aspect-ratio:4/3;background:var(--cream);overflow:hidden;border-radius:3px}
+.frame{aspect-ratio:1/1;background:var(--cream);overflow:hidden;border-radius:3px}
 
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:52px}
 .gallery div{aspect-ratio:1;background:var(--cream);overflow:hidden;border-radius:3px}
@@ -93,10 +93,6 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
   .gallery{grid-template-columns:repeat(2,1fr)}
   .gallery div:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
 }
-
-/* ── Bandeau des avantages ── */
-.highlight{margin-top:56px;border-radius:4px;overflow:hidden;background:var(--cream)}
-.highlight img{width:100%;height:auto;display:block}
 
 /* ── Équipements détaillés ── */
 .amenities{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px;border-radius:3px;overflow:hidden}
