@@ -115,10 +115,21 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 .booking .btn{padding:18px 48px;font-size:1rem}
 .booking small{display:block;margin-top:20px;font-size:.8rem;color:rgba(255,255,255,.55)}
 
-/* ── Moteur de réservation intégré ── */
-.engine{background:#fff;border-radius:6px;padding:10px;max-width:1000px;margin:0 auto;box-shadow:0 18px 50px rgba(0,0,0,.28)}
-.engine iframe{width:100%;border:0;display:block;min-height:2400px;border-radius:3px}
-@media(max-width:700px){.engine iframe{min-height:2900px}}
+/* ── Page de réservation ── */
+.bookbar{position:sticky;top:0;z-index:60;background:var(--ivory);border-bottom:1px solid var(--line)}
+.bookbar .nav{height:64px}
+.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem}
+.bookbar .nav-right a{color:var(--muted);text-shadow:none}
+.bookbar .nav-right a:hover{color:var(--terracotta)}
+.bookintro{text-align:center;padding:clamp(34px,5vw,54px) 0 clamp(26px,3vw,36px)}
+.bookintro h1{font-size:clamp(2rem,4.5vw,3rem);margin-bottom:.35em}
+.bookintro .perks{margin:24px 0 0;color:var(--muted)}
+.bookintro .perks span::before{color:var(--terracotta)}
+.engine-full{width:100%;background:#fff;border-top:1px solid var(--line)}
+.engine-full iframe{width:100%;border:0;display:block;min-height:2400px}
+@media(max-width:700px){.engine-full iframe{min-height:2900px}}
+.bookfoot{text-align:center;padding:40px 0 64px;font-size:.88rem;color:var(--muted)}
+.bookfoot a{color:var(--terracotta)}
 .engine-note{display:block;margin-top:22px;font-size:.8rem;color:rgba(255,255,255,.55)}
 
 /* ── FAQ ── */
