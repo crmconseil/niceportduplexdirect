@@ -84,7 +84,7 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 /* ── Grilles ── */
 .two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,82px);align-items:center}
 @media(max-width:860px){.two{grid-template-columns:1fr}}
-.frame{aspect-ratio:4/5;background:var(--cream);overflow:hidden;border-radius:3px}
+.frame{aspect-ratio:4/3;background:var(--cream);overflow:hidden;border-radius:3px}
 
 .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:52px}
 .gallery div{aspect-ratio:1;background:var(--cream);overflow:hidden;border-radius:3px}
