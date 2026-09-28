@@ -131,8 +131,8 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 .bookintro .perks{margin:20px 0 0;color:var(--muted)}
 .bookintro .perks span::before{color:var(--terracotta)}
 .engine-full{width:100%;background:#fff;border-top:1px solid var(--line)}
-.engine-full iframe{width:100%;border:0;display:block;min-height:2400px}
-@media(max-width:700px){.engine-full iframe{min-height:2900px}}
+.engine-full iframe{width:100%;border:0;display:block;height:1150px;transition:height .2s ease}
+@media(max-width:700px){.engine-full iframe{height:1500px}}
 .bookfoot{text-align:center;padding:40px 0 64px;font-size:.88rem;color:var(--muted)}
 .bookfoot a{color:var(--terracotta)}
 .engine-note{display:block;margin-top:22px;font-size:.8rem;color:rgba(255,255,255,.55)}

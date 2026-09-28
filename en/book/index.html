@@ -56,5 +56,54 @@
   <p style="margin-top:14px;font-size:.78rem">Registered with the City of Nice as a tourist rental under number 06088005303PK.</p>
 </div>
 
+<script>
+// Le cadre SuperHote s'ajuste à la hauteur de son contenu : la liste des
+// dates reste compacte, la fiche détaillée s'allonge d'elle-même, et seule
+// la barre de défilement de la page reste visible.
+(function () {
+  var frame = document.getElementById('booking-engine-rentals');
+  if (!frame) return;
+
+  var MIN = window.innerWidth < 700 ? 1150 : 900;
+  var MAX = 6000;
+
+  function apply(h) {
+    h = Math.round(h);
+    if (!h || h < 200) return;
+    frame.style.height = Math.min(Math.max(h, MIN), MAX) + 'px';
+  }
+
+  // Hauteur annoncée par le moteur de réservation, quel que soit son format.
+  function heightFrom(data) {
+    if (typeof data === 'number') return data;
+    if (typeof data === 'string') {
+      var m = data.match(/(\d{3,5})/);
+      return m ? parseInt(m[1], 10) : 0;
+    }
+    if (data && typeof data === 'object') {
+      return data.height || data.iframeHeight || data.scrollHeight ||
+             (data.payload && data.payload.height) || 0;
+    }
+    return 0;
+  }
+
+  window.addEventListener('message', function (e) {
+    if (String(e.origin).indexOf('superhote.com') === -1) return;
+    apply(heightFrom(e.data));
+  });
+
+  // Sans message du moteur, on suit la hauteur réelle du document embarqué
+  // lorsque le navigateur l'autorise.
+  setInterval(function () {
+    try {
+      var d = frame.contentDocument;
+      if (d && d.body) {
+        apply(Math.max(d.body.scrollHeight, d.documentElement.scrollHeight));
+      }
+    } catch (err) { /* document d'un autre domaine : rien à faire */ }
+  }, 800);
+})();
+</script>
+
 </body>
 </html>
