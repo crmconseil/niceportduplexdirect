@@ -462,6 +462,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
       </div>
       <div>
         <p><strong>Contact</strong></p>
+        <p><a href="tel:+33622953137">+33 6 22 95 31 37</a></p>
         <p><a href="mailto:niceportduplex@gmail.com">niceportduplex@gmail.com</a></p>
       </div>
       <div>
@@ -480,29 +481,63 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
 <!-- ═══════════ STRUCTURED DATA (Google) ═══════════ -->
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"Apartment",
-  "name":"Nice Port Duplex",
-  "description":"Charming 54 m² duplex over two floors in an 18th-century building on the historic port of Nice. Sleeps six, reversible air conditioning, fibre WiFi, five minutes from the beach and the Old Town.",
-  "url":"https://niceportduplex.com/en/",
-  "image":"https://niceportduplex.com/images/opt/hero-1280.jpg",
-  "occupancy":{"@type":"QuantitativeValue","maxValue":6},
-  "floorSize":{"@type":"QuantitativeValue","value":54,"unitCode":"MTK"},
-  "address":{
-    "@type":"PostalAddress",
-    "streetAddress":"20 quai Lunel",
-    "addressLocality":"Nice",
-    "addressRegion":"Provence-Alpes-Côte d'Azur",
-    "postalCode":"06300",
-    "addressCountry":"FR"
+  "@context": "https://schema.org",
+  "@type": "Apartment",
+  "name": "Nice Port Duplex",
+  "description": "Charming 54 m² duplex over two floors in an 18th-century building on the historic port of Nice. Sleeps six, reversible air conditioning, fibre WiFi, five minutes from the beach and the Old Town.",
+  "url": "https://niceportduplex.com/en/",
+  "telephone": "+33622953137",
+  "email": "niceportduplex@gmail.com",
+  "image": "https://niceportduplex.com/images/opt/hero-1280.jpg",
+  "occupancy": {
+    "@type": "QuantitativeValue",
+    "maxValue": 6
   },
-  "amenityFeature":[
-    {"@type":"LocationFeatureSpecification","name":"Fibre WiFi","value":true},
-    {"@type":"LocationFeatureSpecification","name":"Air conditioning","value":true},
-    {"@type":"LocationFeatureSpecification","name":"Fitted kitchen","value":true},
-    {"@type":"LocationFeatureSpecification","name":"Washer-dryer","value":true},
-    {"@type":"LocationFeatureSpecification","name":"Linen and towels provided","value":true}
-  ]
+  "floorSize": {
+    "@type": "QuantitativeValue",
+    "value": 54,
+    "unitCode": "MTK"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "20 quai Lunel",
+    "addressLocality": "Nice",
+    "addressRegion": "Provence-Alpes-Côte d'Azur",
+    "postalCode": "06300",
+    "addressCountry": "FR"
+  },
+  "amenityFeature": [
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Fibre WiFi",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Air conditioning",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Fitted kitchen",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Washer-dryer",
+      "value": true
+    },
+    {
+      "@type": "LocationFeatureSpecification",
+      "name": "Linen and towels provided",
+      "value": true
+    }
+  ],
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.6965,
+    "longitude": 7.284
+  }
 }
 </script>
 
