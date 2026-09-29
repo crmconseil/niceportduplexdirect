@@ -1,0 +1,44 @@
+<!-- Bandeau de consentement : Google Analytics ne se charge qu'après accord. -->
+<div class="cookie-bar" id="cookie-bar" role="region" aria-label="Consent to audience measurement cookies">
+  <p id="cookie-text">We use an audience measurement tool to understand how the site is used. No data is used for advertising purposes.</p>
+  <div class="actions">
+    <button type="button" id="cookie-no">Decline</button>
+    <button type="button" class="ok" id="cookie-yes">Accept</button>
+  </div>
+</div>
+<script>
+(function () {
+  var ID = 'G-PHCLXYTM1L', KEY = 'npd-consent', bar = document.getElementById('cookie-bar');
+
+  function memoire(action, valeur) {
+    try { return action === 'lire' ? localStorage.getItem(KEY) : localStorage.setItem(KEY, valeur); }
+    catch (e) { return null; }
+  }
+
+  function demarrerMesure() {
+    if (window.gtagCharge) return;
+    window.gtagCharge = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ID, { anonymize_ip: true });
+  }
+
+  var choix = memoire('lire');
+  if (choix === 'oui') demarrerMesure();
+  else if (choix !== 'non' && bar) bar.setAttribute('data-open', '1');
+
+  if (bar) {
+    document.getElementById('cookie-yes').addEventListener('click', function () {
+      memoire('ecrire', 'oui'); bar.removeAttribute('data-open'); demarrerMesure();
+    });
+    document.getElementById('cookie-no').addEventListener('click', function () {
+      memoire('ecrire', 'non'); bar.removeAttribute('data-open');
+    });
+  }
+})();
+</script>

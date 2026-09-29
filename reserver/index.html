@@ -17,7 +17,207 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap"></noscript>
-<link rel="stylesheet" href="../styles.css">
+<!-- styles:debut -->
+<style>/* ════════════════════════════════════════════════════════
+   Nice Port Duplex — feuille de style partagée
+   Utilisée par index.html (FR) et en/index.html (EN)
+   ════════════════════════════════════════════════════════ */
+
+:root{
+  --terracotta:#ae623f;        /* fond de bouton, blanc lisible dessus */
+  --terracotta-ink:#9a5738;    /* terracotta en texte sur fond clair */
+  --gold:#e0a94e;
+  --sea:#397aa3;
+  --deep:#14364a;
+  --cream:#ede8e1;
+  --ivory:#fbf9f6;
+  --ink:#1f2a30;
+  --muted:#596972;
+  --line:#ddd5ca;
+  --max:1140px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  color:var(--ink);background:var(--ivory);
+  line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;line-height:1.12;letter-spacing:-.01em}
+h1{font-size:clamp(2.8rem,7.5vw,5.2rem)}
+h2{font-size:clamp(2rem,4.5vw,3.1rem);margin-bottom:.55em}
+h3{font-size:1.3rem;margin-bottom:.35em}
+p{margin-bottom:1em}
+a{color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.frame img,.gallery img,.hero-img img,.bookhero img{background:var(--cream)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+section{padding:clamp(64px,9vw,118px) 0}
+.eyebrow{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terracotta-ink);font-weight:600;margin-bottom:1.3em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:62ch}
+.center{text-align:center}
+.center .lead{margin-left:auto;margin-right:auto}
+
+/* ── Boutons ── */
+.btn{
+  display:inline-block;padding:15px 38px;border-radius:999px;
+  font-size:.95rem;font-weight:600;letter-spacing:.02em;
+  text-decoration:none;transition:.25s;border:1px solid transparent;cursor:pointer;
+}
+.btn-primary{background:var(--terracotta);color:#fff}
+.btn-primary:hover{background:#94512f}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-gold:hover{background:#cb9640;color:var(--deep)}
+.btn-light{background:#fff;color:var(--deep)}
+.btn-light:hover{background:var(--gold);color:var(--deep)}
+
+/* ── En-tête ── */
+header{position:absolute;top:0;left:0;right:0;z-index:50}
+.nav{display:flex;align-items:center;justify-content:space-between;height:86px}
+.brand{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.nav-right{display:flex;align-items:center;gap:26px}
+.nav-right a{color:#fff;font-size:.9rem;text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.nav-right .btn{padding:11px 28px;font-size:.9rem}
+.lang{display:flex;gap:8px;align-items:center;font-size:.88rem;color:#fff}
+.lang a{opacity:.82}
+.lang a:hover{opacity:1}
+.lang a[aria-current="true"]{opacity:1;font-weight:600;border-bottom:1px solid var(--gold)}
+@media(max-width:760px){
+  .nav-right a.hide-sm{display:none}
+  .nav{height:72px}
+  .brand{font-size:1.15rem}
+  .nav-right{gap:12px}
+  .nav-right .btn{padding:10px 18px;font-size:.85rem}
+}
+@media(max-width:400px){
+  .brand{font-size:1rem}
+  .lang{font-size:.8rem}
+  .nav-right .btn{padding:10px 14px}
+}
+/* Zones tactiles confortables sur écran tactile */
+@media(pointer:coarse){
+  .nav-right a,.lang a,.bookfoot a,footer a{min-height:44px;display:inline-flex;align-items:center}
+  .lang a{padding:0 10px}
+  .nav-right{gap:14px}
+  summary{min-height:44px;align-items:center}
+  .btn{padding:16px 34px}
+}
+
+/* ── Hero ── */
+.hero{position:relative;min-height:clamp(540px,88vh,780px);display:flex;align-items:center;justify-content:center;background:var(--deep);text-align:center}
+.hero-img{position:absolute;inset:0}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,54,74,.58) 0%,rgba(20,54,74,.34) 45%,rgba(20,54,74,.66) 100%)}
+.hero .wrap{position:relative;z-index:2;color:#fff;padding-top:60px}
+.hero .eyebrow{color:#fff;opacity:1;letter-spacing:.24em}
+.hero h1{margin-bottom:.3em;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.hero .tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.25rem,2.6vw,1.75rem);max-width:30ch;margin:0 auto 2em;color:rgba(255,255,255,.95);text-shadow:0 1px 16px rgba(0,0,0,.3);line-height:1.4}
+
+/* ── Bandeau équipements ── */
+.strip{background:var(--cream);padding:clamp(44px,5vw,64px) 0}
+.strip-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:20px;text-align:center}
+@media(max-width:1000px){.strip-grid{grid-template-columns:repeat(4,1fr);gap:30px 16px}}
+@media(max-width:540px){.strip-grid{grid-template-columns:repeat(2,1fr)}}
+.strip-grid i{display:flex;align-items:center;justify-content:center;width:62px;height:62px;margin:0 auto 12px;background:#fff;border-radius:50%}
+.strip-grid svg{width:26px;height:26px;stroke:var(--sea);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.strip-grid b{display:block;font-size:.95rem;font-weight:600}
+.strip-grid span{display:block;font-size:.82rem;color:var(--muted)}
+
+/* ── Grilles ── */
+.two{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,82px);align-items:center}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.frame{aspect-ratio:1/1;background:var(--cream);overflow:hidden;border-radius:3px}
+
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:52px}
+.gallery div{aspect-ratio:1;background:var(--cream);overflow:hidden;border-radius:3px}
+.gallery div:first-child{grid-column:span 2;grid-row:span 2;aspect-ratio:auto}
+@media(max-width:700px){
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .gallery div:first-child{grid-column:span 2;grid-row:auto;aspect-ratio:4/3}
+}
+
+/* ── Équipements détaillés ── */
+.amenities{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:44px;border-radius:3px;overflow:hidden}
+.amenities li{list-style:none;background:var(--ivory);padding:24px 26px;font-size:.92rem}
+@media(max-width:860px){.amenities{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){.amenities{grid-template-columns:1fr}}
+.amenities strong{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--terracotta-ink);margin-bottom:7px;font-weight:600}
+
+/* ── Emplacement ── */
+.band{background:var(--cream)}
+.distances{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:36px;margin-top:52px}
+.distances div{border-top:2px solid var(--terracotta);padding-top:18px}
+.distances b{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;display:block;line-height:1;margin-bottom:6px}
+.distances span{font-size:.9rem;color:var(--muted)}
+
+/* ── Réservation ── */
+.booking{background:var(--deep);color:#fff;text-align:center}
+.booking h2{color:#fff}
+.booking .lead{color:rgba(255,255,255,.8);margin:0 auto 12px}
+.perks{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 42px;margin:38px 0 42px;font-size:.92rem;color:rgba(255,255,255,.88)}
+.perks span::before{content:"✓";color:var(--gold);font-weight:600;margin-right:10px}
+.booking .btn{padding:18px 48px;font-size:1rem}
+.booking small{display:block;margin-top:20px;font-size:.8rem;color:rgba(255,255,255,.72)}
+
+/* ── Page de réservation ── */
+.bookbar{position:sticky;top:0;z-index:60;background:var(--ivory);border-bottom:1px solid var(--line)}
+.bookbar .nav{height:64px}
+.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem}
+.bookbar .nav-right a{color:var(--muted);text-shadow:none}
+.bookbar .nav-right a:hover{color:var(--terracotta-ink)}
+.bookhero{position:relative;height:clamp(140px,20vw,210px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--deep)}
+.bookhero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 64%}
+.bookhero::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,54,74,.45),rgba(20,54,74,.68))}
+.bookhero .wrap{position:relative;z-index:2;color:#fff}
+.bookhero .eyebrow{color:#fff;opacity:1;margin-bottom:.55em}
+.bookhero h1{font-size:clamp(1.75rem,3.8vw,2.7rem);margin:0;text-shadow:0 2px 22px rgba(0,0,0,.35)}
+.bookintro{text-align:center;padding:clamp(26px,3.5vw,40px) 0 clamp(22px,2.6vw,32px)}
+.bookintro .perks{margin:20px 0 0;color:var(--muted)}
+.bookintro .perks span::before{color:var(--terracotta)}
+.engine-full{width:100%;background:#fff;border-top:1px solid var(--line)}
+.engine-full iframe{width:100%;border:0;display:block;height:4000px}
+@media(max-width:700px){.engine-full iframe{height:4900px}}
+.bookfoot{text-align:center;padding:40px 0 64px;font-size:.88rem;color:var(--muted)}
+.bookfoot a{color:var(--terracotta-ink)}
+.engine-note{display:block;margin-top:22px;font-size:.8rem;color:rgba(255,255,255,.72)}
+
+/* ── FAQ ── */
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.02rem;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--terracotta-ink);font-size:1.5rem;line-height:1;transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{margin:14px 0 0;color:var(--muted);max-width:72ch}
+
+/* ── Carte ── */
+.map-block{padding-bottom:0}
+.map-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px;margin-bottom:34px}
+.map-head address{font-style:normal;font-size:1.05rem;color:var(--muted);line-height:1.5}
+.map-head address b{display:block;color:var(--ink);font-weight:600}
+.map-frame{position:relative;height:clamp(300px,42vw,460px);background:var(--cream);overflow:hidden}
+.map-frame iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85)}
+
+/* ── Pied de page ── */
+footer{background:var(--ink);color:rgba(255,255,255,.65);padding:60px 0 40px;font-size:.88rem}
+footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.28)}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px}
+.foot p{margin-bottom:.4em}
+.foot strong{color:#fff;font-weight:600}
+.legal{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:rgba(255,255,255,.62)}
+
+/* ── Bandeau de consentement ── */
+.cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:660px;margin:0 auto;
+  background:var(--deep);color:#fff;border-radius:6px;padding:20px 22px;
+  box-shadow:0 18px 50px rgba(0,0,0,.3);display:none;gap:18px;align-items:center;flex-wrap:wrap}
+.cookie-bar[data-open="1"]{display:flex}
+.cookie-bar p{margin:0;flex:1 1 280px;font-size:.88rem;line-height:1.55;color:rgba(255,255,255,.88)}
+.cookie-bar .actions{display:flex;gap:10px;flex-wrap:wrap}
+.cookie-bar button{font:inherit;font-size:.85rem;font-weight:600;border-radius:999px;
+  padding:11px 22px;border:1px solid rgba(255,255,255,.45);background:none;color:#fff;cursor:pointer;min-height:44px}
+.cookie-bar button:hover{border-color:#fff}
+.cookie-bar button.ok{background:var(--gold);border-color:var(--gold);color:var(--deep)}
+.cookie-bar button.ok:hover{background:#cb9640}
+@media(max-width:560px){.cookie-bar .actions{width:100%}.cookie-bar button{flex:1}}</style>
+<!-- styles:fin -->
 </head>
 <body>
 
@@ -63,5 +263,51 @@
 </div>
 
 
+<!-- analytics:debut -->
+<!-- Bandeau de consentement : Google Analytics ne se charge qu'après accord. -->
+<div class="cookie-bar" id="cookie-bar" role="region" aria-label="Consentement aux cookies de mesure d'audience">
+  <p id="cookie-text">Nous utilisons un outil de mesure d'audience pour comprendre comment le site est consulté. Aucune donnée n'est utilisée à des fins publicitaires.</p>
+  <div class="actions">
+    <button type="button" id="cookie-no">Refuser</button>
+    <button type="button" class="ok" id="cookie-yes">Accepter</button>
+  </div>
+</div>
+<script>
+(function () {
+  var ID = 'G-PHCLXYTM1L', KEY = 'npd-consent', bar = document.getElementById('cookie-bar');
+
+  function memoire(action, valeur) {
+    try { return action === 'lire' ? localStorage.getItem(KEY) : localStorage.setItem(KEY, valeur); }
+    catch (e) { return null; }
+  }
+
+  function demarrerMesure() {
+    if (window.gtagCharge) return;
+    window.gtagCharge = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + ID;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    gtag('config', ID, { anonymize_ip: true });
+  }
+
+  var choix = memoire('lire');
+  if (choix === 'oui') demarrerMesure();
+  else if (choix !== 'non' && bar) bar.setAttribute('data-open', '1');
+
+  if (bar) {
+    document.getElementById('cookie-yes').addEventListener('click', function () {
+      memoire('ecrire', 'oui'); bar.removeAttribute('data-open'); demarrerMesure();
+    });
+    document.getElementById('cookie-no').addEventListener('click', function () {
+      memoire('ecrire', 'non'); bar.removeAttribute('data-open');
+    });
+  }
+})();
+</script>
+<!-- analytics:fin -->
 </body>
 </html>
