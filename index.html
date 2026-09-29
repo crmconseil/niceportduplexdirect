@@ -23,15 +23,22 @@
 <meta property="og:image" content="https://niceportduplex.com/images/opt/hero-1280.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
-<link rel="preload" as="image" fetchpriority="high" href="images/opt/hero-1280.webp" type="image/webp" imagesrcset="images/opt/hero-760.webp 760w, images/opt/hero-1280.webp 1280w, images/opt/hero-1920.webp 1920w" imagesizes="100vw">
+<link rel="preload" as="image" fetchpriority="high" href="images/opt/hero-1100.webp" type="image/webp" imagesrcset="images/opt/hero-640.webp 640w, images/opt/hero-800.webp 800w, images/opt/hero-1100.webp 1100w, images/opt/hero-1400.webp 1400w, images/opt/hero-1920.webp 1920w" imagesizes="100vw">
 <link rel="icon" href="images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap"></noscript>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/cormorant-600.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="fonts/inter-400.woff2">
 <!-- styles:debut -->
-<style>/* ════════════════════════════════════════════════════════
+<style>/* Polices servies depuis le domaine : aucune requête vers un tiers. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('fonts/inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;
+  src:url('fonts/inter-600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;
+  src:url('fonts/cormorant-600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;
+  src:url('fonts/cormorant-400-italic.woff2') format('woff2')}
+
+/* ════════════════════════════════════════════════════════
    Nice Port Duplex — feuille de style partagée
    Utilisée par index.html (FR) et en/index.html (EN)
    ════════════════════════════════════════════════════════ */
@@ -87,9 +94,10 @@ section{padding:clamp(64px,9vw,118px) 0}
 /* ── En-tête ── */
 header{position:absolute;top:0;left:0;right:0;z-index:50}
 .nav{display:flex;align-items:center;justify-content:space-between;height:86px}
-.brand{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
 .nav-right{display:flex;align-items:center;gap:26px}
 .nav-right a{color:#fff;font-size:.9rem;text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.nav-right a.btn-gold{color:var(--deep);text-shadow:none}
 .nav-right .btn{padding:11px 28px;font-size:.9rem}
 .lang{display:flex;gap:8px;align-items:center;font-size:.88rem;color:#fff}
 .lang a{opacity:.82}
@@ -174,7 +182,7 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 /* ── Page de réservation ── */
 .bookbar{position:sticky;top:0;z-index:60;background:var(--ivory);border-bottom:1px solid var(--line)}
 .bookbar .nav{height:64px}
-.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem}
+.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem;font-weight:600}
 .bookbar .nav-right a{color:var(--muted);text-shadow:none}
 .bookbar .nav-right a:hover{color:var(--terracotta-ink)}
 .bookhero{position:relative;height:clamp(140px,20vw,210px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--deep)}
@@ -208,6 +216,13 @@ details p{margin:14px 0 0;color:var(--muted);max-width:72ch}
 .map-head address b{display:block;color:var(--ink);font-weight:600}
 .map-frame{position:relative;height:clamp(300px,42vw,460px);background:var(--cream);overflow:hidden}
 .map-frame iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85)}
+.map-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:16px;text-align:center;padding:24px;background:var(--cream)}
+.map-placeholder p{margin:0;max-width:44ch;font-size:.9rem;color:var(--muted)}
+.map-placeholder button{font:inherit;font-size:.9rem;font-weight:600;border-radius:999px;
+  padding:14px 30px;min-height:44px;border:1px solid var(--deep);background:var(--deep);
+  color:#fff;cursor:pointer}
+.map-placeholder button:hover{background:var(--terracotta);border-color:var(--terracotta)}
 
 /* ── Pied de page ── */
 footer{background:var(--ink);color:rgba(255,255,255,.65);padding:60px 0 40px;font-size:.88rem}
@@ -260,7 +275,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
 <!-- ═══════════ HERO ═══════════ -->
 <main id="contenu">
 <div class="hero">
-  <div class="hero-img"><picture><source type="image/webp" srcset="images/opt/hero-760.webp 760w, images/opt/hero-1280.webp 1280w, images/opt/hero-1920.webp 1920w" sizes="100vw"><img src="images/opt/hero-1280.jpg" alt="Le port historique de Nice et ses façades colorées" width="1920" height="1088" fetchpriority="high"></picture></div>
+  <div class="hero-img"><picture><source type="image/webp" srcset="images/opt/hero-640.webp 640w, images/opt/hero-800.webp 800w, images/opt/hero-1100.webp 1100w, images/opt/hero-1400.webp 1400w, images/opt/hero-1920.webp 1920w" sizes="100vw"><img src="images/opt/hero-800.jpg" alt="Le port historique de Nice et ses façades colorées" width="1920" height="1088" fetchpriority="high"></picture></div>
   <div class="wrap">
     <p class="eyebrow">Port de Nice · Côte d'Azur</p>
     <h1>Nice Port Duplex</h1>
@@ -294,18 +309,18 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
       <p>C'est un appartement pour ceux qui veulent vivre le quartier plutôt que le regarder : le marché le matin, les terrasses du port le soir, la Promenade des Anglais au bout de la rue.</p>
     </div>
     <div class="frame">
-      <picture><source type="image/webp" srcset="images/opt/salon-640.webp 640w, images/opt/salon-1040.webp 1040w" sizes="(max-width:860px) 100vw, 520px"><img src="images/opt/salon-640.jpg" alt="Les prestations du duplex : linge et nécessaire de toilette, Nespresso, climatisation et WiFi haut débit" width="1300" height="1300" loading="lazy" decoding="async"></picture>
+      <picture><source type="image/webp" srcset="images/opt/salon-320.webp 320w, images/opt/salon-480.webp 480w, images/opt/salon-640.webp 640w, images/opt/salon-1040.webp 1040w" sizes="(max-width:860px) 100vw, 520px"><img src="images/opt/salon-480.jpg" alt="Les prestations du duplex : linge et nécessaire de toilette, Nespresso, climatisation et WiFi haut débit" width="1300" height="1300" loading="lazy" decoding="async"></picture>
     </div>
   </div>
 
   <div class="wrap">
     <div class="gallery">
-      <div><picture><source type="image/webp" srcset="images/opt/photo-1-700.webp 700w, images/opt/photo-1-1100.webp 1100w" sizes="(max-width:700px) 100vw, (max-width:1140px) 66vw, 740px"><img src="images/opt/photo-1-700.jpg" alt="Les points forts du duplex : central mais calme, WiFi fibre et bureau, climatisation, trois chambres" width="1400" height="1400" loading="lazy" decoding="async"></picture></div>
-      <div><picture><source type="image/webp" srcset="images/opt/photo-2-460.webp 460w, images/opt/photo-2-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-2-460.jpg" alt="La chambre à l'étage sous les poutres apparentes du XVIIIe siècle" width="900" height="900" loading="lazy" decoding="async"></picture></div>
-      <div><picture><source type="image/webp" srcset="images/opt/photo-3-460.webp 460w, images/opt/photo-3-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-3-460.jpg" alt="La salle de bain avec douche à l'italienne et grand miroir" width="900" height="900" loading="lazy" decoding="async"></picture></div>
-      <div><picture><source type="image/webp" srcset="images/opt/photo-4-460.webp 460w, images/opt/photo-4-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-4-460.jpg" alt="La deuxième chambre avec son coin bureau face à la fenêtre" width="900" height="900" loading="lazy" decoding="async"></picture></div>
-      <div><picture><source type="image/webp" srcset="images/opt/photo-5-460.webp 460w, images/opt/photo-5-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-5-460.jpg" alt="La troisième chambre, sous poutre apparente, attenante à la salle d'eau" width="900" height="900" loading="lazy" decoding="async"></picture></div>
-      <div><picture><source type="image/webp" srcset="images/opt/photo-6-460.webp 460w, images/opt/photo-6-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-6-460.jpg" alt="La table dressée face à la cuisine, au coin télévision et à l'escalier" width="900" height="900" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-1-380.webp 380w, images/opt/photo-1-560.webp 560w, images/opt/photo-1-740.webp 740w, images/opt/photo-1-1100.webp 1100w" sizes="(max-width:700px) 100vw, (max-width:1140px) 66vw, 740px"><img src="images/opt/photo-1-560.jpg" alt="Les points forts du duplex : central mais calme, WiFi fibre et bureau, climatisation, trois chambres" width="1400" height="1400" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-2-240.webp 240w, images/opt/photo-2-360.webp 360w, images/opt/photo-2-480.webp 480w, images/opt/photo-2-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-2-360.jpg" alt="La chambre à l'étage sous les poutres apparentes du XVIIIe siècle" width="900" height="900" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-3-240.webp 240w, images/opt/photo-3-360.webp 360w, images/opt/photo-3-480.webp 480w, images/opt/photo-3-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-3-360.jpg" alt="La salle de bain avec douche à l'italienne et grand miroir" width="900" height="900" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-4-240.webp 240w, images/opt/photo-4-360.webp 360w, images/opt/photo-4-480.webp 480w, images/opt/photo-4-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-4-360.jpg" alt="La deuxième chambre avec son coin bureau face à la fenêtre" width="900" height="900" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-5-240.webp 240w, images/opt/photo-5-360.webp 360w, images/opt/photo-5-480.webp 480w, images/opt/photo-5-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-5-360.jpg" alt="La troisième chambre, sous poutre apparente, attenante à la salle d'eau" width="900" height="900" loading="lazy" decoding="async"></picture></div>
+      <div><picture><source type="image/webp" srcset="images/opt/photo-6-240.webp 240w, images/opt/photo-6-360.webp 360w, images/opt/photo-6-480.webp 480w, images/opt/photo-6-720.webp 720w" sizes="(max-width:700px) 50vw, (max-width:1140px) 33vw, 360px"><img src="images/opt/photo-6-360.jpg" alt="La table dressée face à la cuisine, au coin télévision et à l'escalier" width="900" height="900" loading="lazy" decoding="async"></picture></div>
     </div>
   </div>
 </section>
@@ -415,13 +430,23 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
     </address>
   </div>
   <div class="map-frame">
-    <iframe
-      src="https://www.google.com/maps?q=20+quai+Lunel,+06300+Nice,+France&hl=fr&z=16&output=embed"
-      title="Emplacement du duplex, 20 quai Lunel à Nice"
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      allowfullscreen></iframe>
+    <div class="map-placeholder" id="map-zone">
+      <p>La carte est fournie par Google et dépose des cookies. Elle ne se charge qu'à votre demande.</p>
+      <button type="button" id="map-go">Afficher la carte</button>
+    </div>
   </div>
+  <script>
+  document.getElementById('map-go').addEventListener('click', function () {
+    var f = document.createElement('iframe');
+    f.src = 'https://www.google.com/maps?q=20+quai+Lunel,+06300+Nice,+France&hl=fr&z=16&output=embed';
+    f.title = 'Emplacement du duplex, 20 quai Lunel à Nice';
+    f.loading = 'lazy';
+    f.referrerPolicy = 'no-referrer-when-downgrade';
+    f.allowFullscreen = true;
+    var z = document.getElementById('map-zone');
+    z.parentNode.replaceChild(f, z);
+  });
+  </script>
 </section>
 
 </main>
@@ -431,7 +456,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
   <div class="wrap">
     <div class="foot">
       <div>
-        <p style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;color:#fff">Nice Port Duplex</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.35rem;color:#fff">Nice Port Duplex</p>
         <p>Location meublée touristique<br>20 quai Lunel, 06300 Nice</p>
       </div>
       <div>
@@ -539,7 +564,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
   </div>
 </div>
 <script>
-(function () {
+function npdConsent() {
   var ID = 'G-PHCLXYTM1L', KEY = 'npd-consent', bar = document.getElementById('cookie-bar');
 
   function memoire(action, valeur) {
@@ -572,7 +597,10 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
       memoire('ecrire', 'non'); bar.removeAttribute('data-open');
     });
   }
-})();
+}
+// différé : évite de forcer un recalcul de mise en page pendant le rendu
+if ('requestIdleCallback' in window) requestIdleCallback(npdConsent, { timeout: 1800 });
+else setTimeout(npdConsent, 900);
 </script>
 <!-- analytics:fin -->
 </body>

@@ -7,7 +7,7 @@
   </div>
 </div>
 <script>
-(function () {
+function npdConsent() {
   var ID = 'G-PHCLXYTM1L', KEY = 'npd-consent', bar = document.getElementById('cookie-bar');
 
   function memoire(action, valeur) {
@@ -40,5 +40,8 @@
       memoire('ecrire', 'non'); bar.removeAttribute('data-open');
     });
   }
-})();
+}
+// différé : évite de forcer un recalcul de mise en page pendant le rendu
+if ('requestIdleCallback' in window) requestIdleCallback(npdConsent, { timeout: 1800 });
+else setTimeout(npdConsent, 900);
 </script>

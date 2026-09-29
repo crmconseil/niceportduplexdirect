@@ -11,14 +11,20 @@
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#fbf9f6">
 <link rel="icon" href="../../images/favicon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://connect.superhote.com">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap"></noscript>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../fonts/cormorant-600.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../fonts/inter-400.woff2">
 <!-- styles:debut -->
-<style>/* ════════════════════════════════════════════════════════
+<style>/* Polices servies depuis le domaine : aucune requête vers un tiers. */
+@font-face{font-family:'Inter';font-style:normal;font-weight:400;font-display:swap;
+  src:url('../../fonts/inter-400.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-style:normal;font-weight:600;font-display:swap;
+  src:url('../../fonts/inter-600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;
+  src:url('../../fonts/cormorant-600.woff2') format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;
+  src:url('../../fonts/cormorant-400-italic.woff2') format('woff2')}
+
+/* ════════════════════════════════════════════════════════
    Nice Port Duplex — feuille de style partagée
    Utilisée par index.html (FR) et en/index.html (EN)
    ════════════════════════════════════════════════════════ */
@@ -74,9 +80,10 @@ section{padding:clamp(64px,9vw,118px) 0}
 /* ── En-tête ── */
 header{position:absolute;top:0;left:0;right:0;z-index:50}
 .nav{display:flex;align-items:center;justify-content:space-between;height:86px}
-.brand{font-family:'Cormorant Garamond',serif;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.brand{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.55rem;color:#fff;text-decoration:none;letter-spacing:.01em;text-shadow:0 1px 12px rgba(0,0,0,.3)}
 .nav-right{display:flex;align-items:center;gap:26px}
 .nav-right a{color:#fff;font-size:.9rem;text-decoration:none;text-shadow:0 1px 12px rgba(0,0,0,.3)}
+.nav-right a.btn-gold{color:var(--deep);text-shadow:none}
 .nav-right .btn{padding:11px 28px;font-size:.9rem}
 .lang{display:flex;gap:8px;align-items:center;font-size:.88rem;color:#fff}
 .lang a{opacity:.82}
@@ -161,7 +168,7 @@ header{position:absolute;top:0;left:0;right:0;z-index:50}
 /* ── Page de réservation ── */
 .bookbar{position:sticky;top:0;z-index:60;background:var(--ivory);border-bottom:1px solid var(--line)}
 .bookbar .nav{height:64px}
-.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem}
+.bookbar .brand{color:var(--ink);text-shadow:none;font-size:1.35rem;font-weight:600}
 .bookbar .nav-right a{color:var(--muted);text-shadow:none}
 .bookbar .nav-right a:hover{color:var(--terracotta-ink)}
 .bookhero{position:relative;height:clamp(140px,20vw,210px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;background:var(--deep)}
@@ -195,6 +202,13 @@ details p{margin:14px 0 0;color:var(--muted);max-width:72ch}
 .map-head address b{display:block;color:var(--ink);font-weight:600}
 .map-frame{position:relative;height:clamp(300px,42vw,460px);background:var(--cream);overflow:hidden}
 .map-frame iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85)}
+.map-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:16px;text-align:center;padding:24px;background:var(--cream)}
+.map-placeholder p{margin:0;max-width:44ch;font-size:.9rem;color:var(--muted)}
+.map-placeholder button{font:inherit;font-size:.9rem;font-weight:600;border-radius:999px;
+  padding:14px 30px;min-height:44px;border:1px solid var(--deep);background:var(--deep);
+  color:#fff;cursor:pointer}
+.map-placeholder button:hover{background:var(--terracotta);border-color:var(--terracotta)}
 
 /* ── Pied de page ── */
 footer{background:var(--ink);color:rgba(255,255,255,.65);padding:60px 0 40px;font-size:.88rem}
@@ -232,7 +246,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
 
 <main id="contenu">
 <div class="bookhero">
-  <picture><source type="image/webp" srcset="../../images/opt/hero-760.webp 760w, ../../images/opt/hero-1280.webp 1280w" sizes="100vw"><img src="../../images/opt/hero-1280.jpg" alt="The historic port of Nice" width="1920" height="1088" fetchpriority="high"></picture>
+  <picture><source type="image/webp" srcset="../../images/opt/hero-640.webp 640w, ../../images/opt/hero-800.webp 800w, ../../images/opt/hero-1100.webp 1100w, ../../images/opt/hero-1400.webp 1400w, ../../images/opt/hero-1920.webp 1920w" sizes="100vw"><img src="../../images/opt/hero-800.jpg" alt="The historic port of Nice" width="1920" height="1088" fetchpriority="high"></picture>
   <div class="wrap">
     <p class="eyebrow">Booking</p>
     <h1>Book direct</h1>
@@ -273,7 +287,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
   </div>
 </div>
 <script>
-(function () {
+function npdConsent() {
   var ID = 'G-PHCLXYTM1L', KEY = 'npd-consent', bar = document.getElementById('cookie-bar');
 
   function memoire(action, valeur) {
@@ -306,7 +320,10 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
       memoire('ecrire', 'non'); bar.removeAttribute('data-open');
     });
   }
-})();
+}
+// différé : évite de forcer un recalcul de mise en page pendant le rendu
+if ('requestIdleCallback' in window) requestIdleCallback(npdConsent, { timeout: 1800 });
+else setTimeout(npdConsent, 900);
 </script>
 <!-- analytics:fin -->
 </body>

@@ -27,7 +27,8 @@ ga_en = (ROOT / 'analytics.en.html').read_text().strip()
 for page in PAGES:
     p = ROOT / page
     t = p.read_text()
-    t = inject(t, 'styles', f'<style>{css}</style>')
+    profondeur = '../' * page.count('/')
+    t = inject(t, 'styles', '<style>' + css.replace('FONTS/', profondeur + 'fonts/') + '</style>')
     t = inject(t, 'analytics', ga_en if page.startswith('en/') else ga_fr)
     p.write_text(t)
     print(f'{page:22} styles {len(css)//1024} Ko + analytics')
