@@ -13,7 +13,10 @@
 <link rel="icon" href="../images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://connect.superhote.com">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;600&display=swap"></noscript>
 <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
@@ -27,8 +30,9 @@
   </nav>
 </div>
 
+<main id="contenu">
 <div class="bookhero">
-  <img src="../images/hero.jpg" alt="Le port historique de Nice">
+  <picture><source type="image/webp" srcset="../images/opt/hero-760.webp 760w, ../images/opt/hero-1280.webp 1280w" sizes="100vw"><img src="../images/opt/hero-1280.jpg" alt="Le port historique de Nice" width="1920" height="1088" fetchpriority="high"></picture>
   <div class="wrap">
     <p class="eyebrow">Réservation</p>
     <h1>Réservez en direct</h1>
@@ -49,6 +53,8 @@
           id="booking-engine-rentals"
           title="Calendrier de disponibilités et réservation"></iframe>
 </div>
+
+</main>
 
 <div class="wrap bookfoot">
   <p><a href="/">← Retour au site</a></p>
