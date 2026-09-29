@@ -234,6 +234,37 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
 .foot strong{color:#fff;font-weight:600}
 .legal{margin-top:44px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12);font-size:.78rem;color:rgba(255,255,255,.62)}
 
+/* ── Pages guide ── */
+.article{max-width:760px;margin:0 auto;padding:clamp(40px,5vw,64px) 24px clamp(30px,4vw,48px)}
+.article p{font-size:1.05rem;line-height:1.75;margin-bottom:1.15em}
+.article h2{font-size:clamp(1.6rem,3.2vw,2.15rem);margin:1.7em 0 .5em}
+.article h2:first-of-type{margin-top:.3em}
+.article h3{font-size:1.15rem;font-weight:600;font-family:'Inter',sans-serif;margin:1.6em 0 .4em}
+.article ul{margin:0 0 1.3em 1.1em}
+.article li{margin-bottom:.5em;line-height:1.7}
+.article a{color:var(--terracotta-ink);text-underline-offset:3px}
+.article .chapeau{font-size:1.18rem;line-height:1.65;color:var(--muted);margin-bottom:1.8em}
+.encadre{background:var(--cream);border-left:3px solid var(--terracotta);padding:20px 24px;margin:1.8em 0;border-radius:0 3px 3px 0}
+.encadre p{margin:0;font-size:.97rem;line-height:1.65}
+.encadre p+p{margin-top:.7em}
+.article table{width:100%;border-collapse:collapse;margin:1.5em 0;font-size:.95rem}
+.article th,.article td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line)}
+.article th{font-weight:600;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--terracotta-ink)}
+.maj{display:block;margin-top:2.5em;padding-top:1.2em;border-top:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+
+/* Appel à la réservation en fin de guide */
+.cta-guide{background:var(--deep);color:#fff;text-align:center;padding:clamp(48px,6vw,72px) 24px}
+.cta-guide h2{color:#fff;margin-bottom:.4em;font-size:clamp(1.7rem,3.4vw,2.4rem)}
+.cta-guide p{max-width:52ch;margin:0 auto 1.8em;color:rgba(255,255,255,.85)}
+
+/* Liste des guides sur la page d'accueil */
+.guides{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:44px}
+.guides a{display:block;padding:26px 24px;background:var(--ivory);border:1px solid var(--line);
+  border-radius:4px;text-decoration:none;transition:.2s}
+.guides a:hover{border-color:var(--terracotta);transform:translateY(-2px)}
+.guides b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.3rem;margin-bottom:.3em;line-height:1.25}
+.guides span{font-size:.92rem;color:var(--muted);line-height:1.6}
+
 /* ── Bandeau de consentement ── */
 .cookie-bar{position:fixed;left:16px;right:16px;bottom:16px;z-index:200;max-width:660px;margin:0 auto;
   background:var(--deep);color:#fff;border-radius:6px;padding:20px 22px;
@@ -414,6 +445,21 @@ footer a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(255,255,25
       <summary>Why book direct rather than through Airbnb or Booking?</summary>
       <p>Because platform commissions do not apply. For identical dates, the direct rate is the better one, and you deal with your host directly before and during your stay.</p>
     </details>
+  </div>
+</section>
+
+<!-- ═══════════ GUIDES ═══════════ -->
+<section class="band">
+  <div class="wrap">
+    <p class="eyebrow">The neighbourhood</p>
+    <h2>Planning your stay in Nice</h2>
+    <p class="lead">Four practical guides, written from the neighbourhood: coming from the airport, parking, what to see, and choosing a beach.</p>
+    <div class="guides">
+      <a href="/en/nice-airport/"><b>Coming from the airport</b><span>Tram, taxi, journey times and fares into the centre.</span></a>
+      <a href="/en/parking-in-nice/"><b>Where to park</b><span>Car parks, street rates and park-and-ride.</span></a>
+      <a href="/en/weekend-in-nice/"><b>A weekend in Nice</b><span>Old Town, Castle Hill, markets and museums.</span></a>
+      <a href="/en/nice-beaches/"><b>The beaches of Nice</b><span>Public or private, and the closest to the port.</span></a>
+    </div>
   </div>
 </section>
 

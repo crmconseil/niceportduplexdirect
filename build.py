@@ -12,6 +12,11 @@ import pathlib, re
 
 ROOT = pathlib.Path(__file__).parent
 PAGES = ['index.html', 'en/index.html', 'reserver/index.html', 'en/book/index.html']
+# les pages guide, fabriquées par guides.py
+PAGES += sorted(str(f.relative_to(ROOT)) for f in ROOT.glob('*/index.html')
+                if str(f.relative_to(ROOT)) not in PAGES and not str(f).endswith('en/index.html'))
+PAGES += sorted(str(f.relative_to(ROOT)) for f in ROOT.glob('en/*/index.html')
+                if str(f.relative_to(ROOT)) not in PAGES)
 
 def inject(text, tag, payload):
     start, end = f'<!-- {tag}:debut -->', f'<!-- {tag}:fin -->'
